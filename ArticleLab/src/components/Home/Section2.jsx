@@ -20,7 +20,7 @@ function Section2() {
   ];
   return (
     <div>
-      <div className=" grid grid-cols-2 sm:grid-cols-3 bg-none ">
+      <div className=" grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 bg-none ">
         {list.map((item, index) => (
           <Card
             shadow="sm"
@@ -38,15 +38,11 @@ function Section2() {
                 className=" object-cover h-[200px] rounded-none "
                 src={item.img}
               />
-            
             </CardBody>
             <p className="">{item.title}</p>
           </Card>
-           
         ))}
-    
       </div>
-      
     </div>
   );
 }

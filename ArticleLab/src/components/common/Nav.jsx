@@ -1,32 +1,36 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link} from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+  Link,
+} from "@nextui-org/react";
 // import { NavbarItem, Button} from "@nextui-org/react";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-const img1='src/assets/logo1.png'
-  const menuItems = [
-    "Home",
-    "Services",
-    "About",
-    "Contact us",
-    "Log Out",
-  ];
+  const img1 = "src/assets/logo1.png";
+  const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className=" bg-slate-100">
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      className="sticky top-0 z-50 backdrop-blur-md border-slate-700/10 "
+    >
       <NavbarContent>
-
-      <NavbarBrand>
-        <img src={img1} alt="logo" className="h-24 w-24 "/>
-          <p className="font-bold text-xl ml-5">COAL</p>
+        <NavbarBrand className="flex gap-2">
+          <img src={img1} alt="logo" className="h-16 w-18 mt-3" />
+          <p className="bg-gradient-to-r from-cyan-600 to-orange-400 text-transparent bg-clip-text text-2xl tracking-wider">
+            ArticleLab
+          </p>
         </NavbarBrand>
 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className=""
         />
-        
       </NavbarContent>
 
       {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -55,14 +59,18 @@ const img1='src/assets/logo1.png'
             Sign Up
           </Button>
         </NavbarItem>
-      </NavbarContent> */} 
+      </NavbarContent> */}
 
       <NavbarMenu className="w-1/5  left-auto right-0">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                  ? "danger"
+                  : "foreground"
               }
               className="w-full"
               href="#"
