@@ -3,7 +3,7 @@ const img1 = "src/assets/section1.jpg"; // Ensure this path is correct
 function Section1() {
   return (
     <div
-      className="relative flex items-center justify-center h-screen bg-cover bg-center"
+      className="relative flex items-center justify-center h-screen bg-cover bg-center z-0"
       style={{ backgroundImage: `url(${img1})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50" />
@@ -17,9 +17,9 @@ function Section1() {
           <input
             type="text"
             placeholder="Enter order number"
-            className="h-16 w-3/4 placeholder:text-center text-lg placeholder:font-bold rounded-bl-full rounded-tl-full rounded-br-full"
+            className="h-16 w-3/4 placeholder:text-center text-lg placeholder:font-bold "
           />
-          <button className="h-16 w-2/4 ml-4 bg-yellow-400 hover:bg-yellow-500 font-bold rounded-tr-full rounded-tl-full rounded-br-full">
+          <button className="h-12 w-1/4 ml-4 bg-yellow-400 hover:bg-yellow-500 font-bold mt-2">
             Track Order
           </button>
         </div>
