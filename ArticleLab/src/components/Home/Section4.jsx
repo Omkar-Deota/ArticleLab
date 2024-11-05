@@ -1,7 +1,7 @@
 const img1 = "src/assets/section1.jpg";
-function Section4() {
+const Section4=()=> {
   return (
-    <div className="mb-10 h-screen">
+    <div className="mb-10  ">
       <div className="text-center mb-5 ">
         <h1 className="text-5xl text-orange-500 font-extrabold">ABOUT US</h1>
         <p>

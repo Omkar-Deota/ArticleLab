@@ -1,6 +1,8 @@
 const img1 = "src/assets/section1.jpg"; // Ensure this path is correct
-
-function Section1() {
+import { Button } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
+import { Search } from "../../assets/Search";
+const Section1 = () => {
   return (
     <div
       className="relative flex items-center justify-center h-screen bg-cover bg-center z-0"
@@ -13,19 +15,21 @@ function Section1() {
           {" "}
           Track your consignment
         </h2>
-        <div className="flex my-6 justify-center">
-          <input
+        <div className="flex my-6 justify-center relative">
+          <Input
             type="text"
             placeholder="Enter order number"
             className="h-16 w-3/4 placeholder:text-center text-lg placeholder:font-bold "
+            endContent={<Search className="absolute right-4" />}
           />
-          <button className="h-12 w-1/4 ml-4 bg-yellow-400 hover:bg-yellow-500 font-bold mt-2">
+          {/* button user krna hay */}
+          <Button radius="lg" className=" bg-yellow-400 font-bold ml-4">
             Track Order
-          </button>
+          </Button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Section1;

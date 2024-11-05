@@ -18,12 +18,12 @@ export default function App() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      className="sticky top-0 z-50 backdrop-blur-md border-slate-700/10 "
+      className="sticky top-0 z-50 backdrop-blur-md border-slate-700/10"
     >
-      <NavbarContent>
-        <NavbarBrand className="flex gap-2">
+      <NavbarContent className="flex justify-start ">
+        <NavbarBrand className="flex items-center ">
           <img src={img1} alt="logo" className="h-12 w-28 my-1" />
-          <p className="bg-gradient-to-r from-cyan-800 to-orange-600 text-transparent bg-clip-text text-2xl font-serif font-extrabold tracking-wider">
+          <p className="bg-gradient-to-r from-cyan-800 ml-4 to-orange-600 text-transparent bg-clip-text text-2xl font-serif font-extrabold tracking-wider">
             ArticleLab
           </p>
         </NavbarBrand>
@@ -62,34 +62,17 @@ export default function App() {
       </NavbarContent> */}
 
       <NavbarMenu className="w-1/5 left-auto right-0 items-center">
-      
-      <div className=" inline-block mt-12">
-          <img src={img1} alt="logo" className="h-10 w-24 text-center ml-3  " />
-          <p className="bg-gradient-to-r from-cyan-800 to-orange-600 text-transparent 
-          bg-clip-text text-xl font-serif font-extrabold tracking-wider">
-            ArticleLab
-          </p>
-          <hr />
-          <hr />
-        </div>
+  
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`} className="text-3xl mt-5">
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
+          <NavbarMenuItem key={`${item}-${index}`} className=" my-7 ">
+            <Link           
+              className="w-full text-black hover:text-orange-500 text-3xl"
               href="#"
               size="lg"
             >
               {item}
-              
             </Link>
-          <hr />
+            <hr />
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
