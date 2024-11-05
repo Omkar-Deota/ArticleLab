@@ -1,3 +1,5 @@
+import Section5 from "./Section5";
+
 const img1 = "src/assets/section1.jpg";
 const Section4=()=> {
   return (
@@ -10,24 +12,10 @@ const Section4=()=> {
         </p>
       </div>
       <img src={img1} alt="section4" />
-      <div className="grid grid-cols-4 gap-1 mx-auto mt-20 text-center ">
-        <div className="block">
-          <h1 className="text-4xl text-orange-500">10+</h1>
-          <span>years of experience</span>
-        </div>
-        <div>
-          <h1 className="text-4xl text-orange-500">10+</h1>
-          <span>years of experience</span>
-        </div>
-        <div>
-          <h1 className="text-4xl text-orange-500">10+</h1>
-          <span>years of experience</span>
-        </div>
-        <div>
-          <h1 className="text-4xl text-orange-500">10+</h1>
-          <span>years of experience</span>
-        </div>
+      <div className="my-8 w-4/5 mx-auto">
+      <Section5/>
       </div>
+     
     </div>
   );
 }
