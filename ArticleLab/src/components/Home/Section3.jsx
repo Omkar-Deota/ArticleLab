@@ -12,17 +12,17 @@ const Section3 = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto mt-20 h-60 ">
         {/* Card 1 */}
-        <div className="bg-white hover:border-orange-500 p-4 mx-2 shadow-2xl hover:shadow-orange-500/100 rounded-lg">
+        <div className="bg-white p-4 mx-2 shadow-2xl hover:shadow-slate-700 rounded-lg">
           <h1>hello</h1>
           <p>jhfjdfjdgfjfbhjbjhbgfjukgbjukgbg</p>
         </div>
         {/* Card 2 */}
-        <div className="bg-white p-4 mx-2 hover:border-orange-500 shadow-2xl hover:shadow-orange-500/100 rounded-lg">
+        <div className="bg-white p-4 mx-2  shadow-2xl hover:shadow-slate-700 rounded-lg">
           <h1>hello</h1>
           <p>jhfjdfjdgfjfbhjbjhbgfjukgbjukgbg</p>
         </div>
         {/* Card 3 */}
-        <div className="bg-white p-4 mx-2 hover:border-orange-500 shadow-2xl hover:shadow-orange-500/100 rounded-lg">
+        <div className="bg-white p-4 mx-2  shadow-2xl hover:shadow-slate-700 rounded-lg">
           <h1>hello</h1>
           <p>jhfjdfjdgfjfbhjbjhbgfjukgbjukgbg</p>
         </div>
