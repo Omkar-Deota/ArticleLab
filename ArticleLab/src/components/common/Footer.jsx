@@ -1,4 +1,5 @@
 import { Link } from "@nextui-org/react";
+import ModalCom from "../Modal/ModalCom";
 
 const Footer = () => {
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
@@ -32,6 +33,7 @@ const Footer = () => {
           <span>Follow us</span>
         </div>
       </div>
+      <ModalCom/>
     </div>
   );
 };

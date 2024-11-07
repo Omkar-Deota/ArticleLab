@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -8,10 +8,12 @@ import {
   NavbarMenuItem,
   Link,
 } from "@nextui-org/react";
-// import { NavbarItem, Button} from "@nextui-org/react";
+
+import ModelCom from "../Modal/ModalCom";
 
 export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const img1 = "src/assets/logo1.png";
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
 
@@ -27,13 +29,38 @@ export default function App() {
             ArticleLab
           </p>
         </NavbarBrand>
+        {/* modal */}
+        <ModelCom
+          className="hover: border hover:bg-orange-500 border-orange-600 mx-4"
+          size="md"
+          variant="light"
+        />
 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
 
-      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarMenu className="w-1/5 left-auto right-0 items-center">
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`} className=" my-7 ">
+            <Link
+              className="w-full text-black hover:text-orange-500 text-3xl"
+              href="#"
+              size="lg"
+            >
+              {item}
+            </Link>
+            <hr />
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
+  );
+}
+
+{
+  /* <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#">
             Features
@@ -59,23 +86,5 @@ export default function App() {
             Sign Up
           </Button>
         </NavbarItem>
-      </NavbarContent> */}
-
-      <NavbarMenu className="w-1/5 left-auto right-0 items-center">
-  
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`} className=" my-7 ">
-            <Link           
-              className="w-full text-black hover:text-orange-500 text-3xl"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-            <hr />
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
-  );
+      </NavbarContent> */
 }

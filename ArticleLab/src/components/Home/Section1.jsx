@@ -22,7 +22,7 @@ const Section1 = () => {
             className="h-16 w-3/4 placeholder:text-center text-lg placeholder:font-bold "
             endContent={<Search className="absolute right-4" />}
           />
-          {/* button user krna hay */}
+          
           <Button radius="lg" className=" bg-yellow-400 font-bold ml-4">
             Track Order
           </Button>
