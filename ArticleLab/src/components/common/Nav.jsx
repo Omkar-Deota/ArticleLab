@@ -7,15 +7,17 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Button,
+
   
 } from "@nextui-org/react";
-import ModalCom from '../Modal/ModalCom'
 import Signup from '../Authentication/Signup'
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // eslint-disable-next-line no-unused-vars
   const [showModal, setShowModal] = useState(false)
+
   const img1 = "src/assets/logo1.png";
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
 
@@ -31,10 +33,8 @@ export default function App() {
             ArticleLab
           </p>
         </NavbarBrand>
-        {/* modal */}
-        <Button radius="sm" className=" bg-yellow-400 font-bold ml-4" onClick={() => setShowModal(true)}>
-            Sign up
-          </Button>
+
+        {showModal?<Signup />:<Signup/>}
 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -55,39 +55,10 @@ export default function App() {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
-      <ModalCom className="" isVisible={showModal} onClose={() => setShowModal(false)}>
-                <Signup />
-            </ModalCom>
+
+          
+
     </Navbar>
   );
 }
 
-{
-  /* <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent> */
-}
