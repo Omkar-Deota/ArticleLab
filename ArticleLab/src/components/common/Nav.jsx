@@ -7,13 +7,15 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
+  Button,
+  
 } from "@nextui-org/react";
-
-import ModelCom from "../Modal/ModalCom";
+import ModalCom from '../Modal/ModalCom'
+import Signup from '../Authentication/Signup'
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [showModal, setShowModal] = useState(false)
   const img1 = "src/assets/logo1.png";
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
 
@@ -30,11 +32,9 @@ export default function App() {
           </p>
         </NavbarBrand>
         {/* modal */}
-        <ModelCom
-          className="hover: border hover:bg-orange-500 border-orange-600 mx-4"
-          size="md"
-          variant="light"
-        />
+        <Button radius="sm" className=" bg-yellow-400 font-bold ml-4" onClick={() => setShowModal(true)}>
+            Sign up
+          </Button>
 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -55,6 +55,9 @@ export default function App() {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
+      <ModalCom className="" isVisible={showModal} onClose={() => setShowModal(false)}>
+                <Signup />
+            </ModalCom>
     </Navbar>
   );
 }
