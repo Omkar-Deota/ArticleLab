@@ -1,9 +1,5 @@
-
-
 const HttpMethodProvider = () => {
-  return (
-    <div>HttpMethodProvider</div>
-  )
-}
+  return <div>HttpMethodProvider</div>;
+};
 
-export default HttpMethodProvider
+export default HttpMethodProvider;

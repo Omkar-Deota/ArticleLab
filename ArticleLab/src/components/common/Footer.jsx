@@ -1,6 +1,5 @@
 import { Link } from "@nextui-org/react";
 
-
 const Footer = () => {
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
   return (
@@ -33,7 +32,6 @@ const Footer = () => {
           <span>Follow us</span>
         </div>
       </div>
-    
     </div>
   );
 };

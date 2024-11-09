@@ -8,17 +8,20 @@ import {
   NavbarMenuItem,
   Link,
 } from "@nextui-org/react";
-import Signup from "../Authentication/Signup";
+import SignUp from "../Authentication/SignUp";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   // eslint-disable-next-line no-unused-vars
   const [showModal, setShowModal] = useState(false);
 
   const img1 = "/src/assets/picture/logo1.png";
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
-
+  const handleChange = () =>{
+    setOpen(!open);
+  }
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -32,7 +35,7 @@ export default function App() {
           </p>
         </NavbarBrand>
 
-        {showModal ? <Signup /> : <Signup />}
+        {showModal ? <SignUp setOpen={handleChange} /> : <SignUp setOpen={handleChange} />}
 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

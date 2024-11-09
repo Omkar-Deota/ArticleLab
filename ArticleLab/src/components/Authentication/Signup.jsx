@@ -8,21 +8,23 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import Login from "./Login";
-
 import { Switch } from "@nextui-org/react";
-
 import { useState } from "react";
 import Registration from "./Registration";
-export default function App() {
+const SignUp = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleChange = (checked) => {
-    setIsChecked(checked);
+  const handleChange = () => {
+    setIsChecked(!isChecked);
   };
   return (
     <>
-      <Button onPress={onOpen} size="sm">
+      <Button
+        onPress={onOpen}
+        size="sm"
+        className="bg-yellow-400 font-bold tracking-wide rounded-xl"
+      >
         SignUp
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -63,4 +65,6 @@ export default function App() {
       </Modal>
     </>
   );
-}
+};
+
+export default SignUp;
