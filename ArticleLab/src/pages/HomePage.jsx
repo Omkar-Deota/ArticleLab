@@ -1,9 +1,11 @@
 import Footer from "../components/common/Footer";
 import Nav from "../components/common/Nav";
 const img1 = "/src/assets/picture/section1.jpg";
+import features from "../utils/constant";
 
-import { Button, Image, Input } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 import { Search } from "../assets/icons/Search";
+
 const HomePage = () => {
   return (
     <>
@@ -33,28 +35,21 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <section className="flex justify-center items-center ">
-        <div className="grid grid-cols-3 gap-10 -mt-5 px-4 mb-20">
-          <div className="z-10">
-            <div className="max-w-sm  overflow-hidden shadow-2xl hover:shadow-slate-400 rounded-lg  ">
-              <Image alt="img1" src={img1} />
-              <p className="text-center">hfjghdfgh</p>
-            </div>
+      {/* cards */}
+
+      <section className="flex justify-center items-center">
+        {features.map((item, index) => (
+          <div
+            key={index}
+            className="-mt-20 z-20 mb-5 shadow-2xl hover:shadow-slate-400 mx-4 rounded-2xl bg-white h-64"
+          >
+            <img src={item.image} alt="image" className="rounded-2xl h-56" />
+            <div className="text-center">{item.title}</div>
           </div>
-          <div className="z-10">
-            <div className="max-w-sm overflow-hidden  shadow-2xl hover:shadow-slate-400 rounded-lg">
-              <Image alt="img1" src={img1} />
-              <p className="text-center">hfjghdfgh</p>
-            </div>
-          </div>
-          <div className="z-10">
-            <div className="max-w-sm overflow-hidden   shadow-2xl hover:shadow-slate-400 rounded-lg">
-              <Image alt="img1" src={img1} />
-              <p className="text-center">hfjghdfgh</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </section>
+
+      {/* what we offer */}
       <div className="bg-slate-100 mb-10">
         <div className="text-center mb-5 my-5">
           <h1 className="text-5xl text-orange-500 font-extrabold">

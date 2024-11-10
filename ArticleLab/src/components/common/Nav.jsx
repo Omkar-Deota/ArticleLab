@@ -19,9 +19,9 @@ export default function App() {
 
   const img1 = "/src/assets/picture/logo1.png";
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
-  const handleChange = () =>{
+  const handleChange = () => {
     setOpen(!open);
-  }
+  };
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -35,7 +35,11 @@ export default function App() {
           </p>
         </NavbarBrand>
 
-        {showModal ? <SignUp setOpen={handleChange} /> : <SignUp setOpen={handleChange} />}
+        {showModal ? (
+          <SignUp setOpen={handleChange} />
+        ) : (
+          <SignUp setOpen={handleChange} />
+        )}
 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
