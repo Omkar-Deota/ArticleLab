@@ -1,12 +1,25 @@
+import { useState } from "react";
 import Footer from "../components/common/Footer";
 import Nav from "../components/common/Nav";
 const img1 = "/src/assets/picture/section1.jpg";
 import features from "../utils/constant";
+import Card from "../utils/constant";
 
 import { Button, Input } from "@nextui-org/react";
 import { Search } from "../assets/icons/Search";
 
 const HomePage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to handle opening and closing of the modal
+  const handleTrackOrderClick = () => {
+    setIsModalOpen(true); // Open modal
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close modal
+  };
+
   return (
     <>
       <Nav />
@@ -29,7 +42,7 @@ const HomePage = () => {
               endContent={<Search className="absolute right-4" />}
             />
 
-            <Button radius="lg" className=" bg-yellow-400 font-bold ml-4">
+            <Button radius="lg" className=" bg-yellow-400 font-bold ml-4"  onClick={handleTrackOrderClick} >
               Track Order
             </Button>
           </div>
@@ -37,13 +50,15 @@ const HomePage = () => {
       </div>
       {/* cards */}
 
-      <section className="flex justify-center items-center">
+      <section className="flex justify-center items-center w-full">
         {features.map((item, index) => (
           <div
             key={index}
-            className="-mt-20 z-20 mb-5 shadow-2xl hover:shadow-slate-400 mx-4 rounded-2xl bg-white h-64"
+            className="-mt-20 z-20 mb-5 shadow-2xl hover:shadow-slate-400 mx-4 rounded-2xl bg-white h-64 w-full "
           >
-            <img src={item.image} alt="image" className="rounded-2xl h-56" />
+            {/* error occuring here */}
+
+            <img src={img1} alt="image" className="rounded-2xl h-56 w-full" />
             <div className="text-center">{item.title}</div>
           </div>
         ))}
@@ -60,22 +75,16 @@ const HomePage = () => {
             Vokalia and Consonantia, there live the blind texts.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto mt-20 h-60 ">
-          {/* Card 1 */}
-          <div className="bg-white p-4 mx-2 shadow-2xl hover:shadow-slate-500 rounded-lg">
-            <h1>hello</h1>
-            <p>jhfjdfjdgfjfbhjbjhbgfjukgbjukgbg</p>
-          </div>
-          {/* Card 2 */}
-          <div className="bg-white p-4 mx-2  shadow-2xl hover:shadow-slate-500 rounded-lg">
-            <h1>hello</h1>
-            <p>jhfjdfjdgfjfbhjbjhbgfjukgbjukgbg</p>
-          </div>
-          {/* Card 3 */}
-          <div className="bg-white p-4 mx-2  shadow-2xl hover:shadow-slate-500 rounded-lg">
-            <h1>hello</h1>
-            <p>jhfjdfjdgfjfbhjbjhbgfjukgbjukgbg</p>
-          </div>
+        <div className="flex justify-center items-center w-full">
+          {Card.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white mx-2 shadow-2xl hover:shadow-slate-500 rounded-2xl h-60 text-center"
+            >
+              <img src={img1} alt="" className="rounded-2xl" />
+              <span className="text-black mx-auto">{item.title}</span>
+            </div>
+          ))}
         </div>
       </div>
       <div className="mb-10  ">
@@ -87,6 +96,7 @@ const HomePage = () => {
           </p>
         </div>
         <img src={img1} alt="section4" />
+
         <div className="my-8 w-4/5 mx-auto">
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 mx-auto h-40">
@@ -122,6 +132,24 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h2 className="text-2xl font-semibold text-center">Order Tracking</h2>
+            <p className="mt-4 text-lg">Your data is here...</p>
+            <button
+              className="mt-4 bg-red-500 text-white px-4 py-1 rounded-lg"
+              onClick={handleCloseModal} 
+      >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </>
   );
