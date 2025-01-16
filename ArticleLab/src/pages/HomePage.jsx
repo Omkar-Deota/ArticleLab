@@ -32,11 +32,15 @@ const HomePage = () => {
   const fetchUsers = () => {
     setLoading(true);
     setError(null);
+    setInvalidSearch(false);
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
         setUsers(response.data);
         setLoading(false);
+        setInvalidSearch(false); // Ensure invalidSearch is reset after data is fetched
+
+        
       })
       .catch(() => {
         setError("Error fetching data");
@@ -193,7 +197,7 @@ const HomePage = () => {
 
           {/* error and invalid result */}
             {error && <div>{error}</div>}
-            {invalidSearch && <div style={{ color: "red" }}>Invalid user</div>}
+            {invalidSearch && !loading && <div className="text-red-500">Invalid user</div>}
 
             {/* <Apicall/> */}
             <ul className="">
