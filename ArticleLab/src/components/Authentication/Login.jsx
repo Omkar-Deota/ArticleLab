@@ -3,6 +3,7 @@ import { Input } from "@nextui-org/react";
 function Login() {
   return (
     <div>
+      <p className="font-semibold text-center text-3xl">Welcome back</p>
       <Input
         key="inside"
         type="text"

@@ -2,7 +2,8 @@ import { Input } from "@nextui-org/react";
 
 function Registration() {
   return (
-    <div className="">
+    <div className=" ">
+            <p className="font-semibold text-center text-3xl">Create an account</p>
       <Input
         key="inside"
         type="text"
@@ -43,6 +44,7 @@ function Registration() {
         description="Password should be max then 8 character:"
         className="my-2"
       />
+      <p>Already have an account?  <button className="text-blue-500" >Login</button></p>
     </div>
   );
 }

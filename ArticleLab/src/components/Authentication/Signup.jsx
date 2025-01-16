@@ -32,20 +32,21 @@ const SignUp = () => {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                <div className="mb-4 flex justify-center">
+                <div className=" flex justify-center">
                   <Switch
                     checked={isChecked}
                     onChange={(e) => handleChange(e.target.checked)}
                     size="lg"
+                    className=""
                   />
                 </div>
               </ModalHeader>
               <ModalBody></ModalBody>
 
-              <div className="mt-6 mx-auto w-4/5">
+              <div className="mt-3 mx-auto w-4/5">
                 {isChecked ? <Login /> : <Registration />}
               </div>
-              <ModalFooter>
+              <ModalFooter className="p-2">
                 <Button
                   color="danger"
                   variant="light"
