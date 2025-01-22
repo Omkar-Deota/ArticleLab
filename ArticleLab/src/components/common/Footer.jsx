@@ -3,8 +3,8 @@ import { Link } from "@nextui-org/react";
 const Footer = () => {
   const menuItems = ["Home", "Services", "About", "Contact us", "Log Out"];
   return (
-    <div className=" bg-neutral-500 ">
-      <div className="grid grid-cols-3 mx-auto  text-center">
+    <div className=" bg-neutral-500 h-auto ">
+      <div className="grid md:grid-cols-3  mx-auto  text-center">
         <div className=" mb-5 flex-row items-center justify-center  ">
           <h1 className="text-2xl text-orange-600 font-extrabold ">ABOUT US</h1>
           <p className=" px-6 text-white">
@@ -28,7 +28,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="text-2xl text-orange-600 font-extrabold">
+        <div className="text-2xl text-orange-600 font-extrabold mb-7">
           <span>Follow us</span>
         </div>
       </div>
