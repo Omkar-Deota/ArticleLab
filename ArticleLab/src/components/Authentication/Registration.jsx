@@ -1,9 +1,10 @@
 import { Input } from "@nextui-org/react";
+import PropTypes from 'prop-types';
 
-function Registration() {
+const Registration = ({toggleState}) => {
   return (
     <div className=" ">
-            <p className="font-semibold text-center text-3xl">Create an account</p>
+      <p className="font-semibold text-center text-3xl">Create an account</p>
       <Input
         key="inside"
         type="text"
@@ -44,9 +45,18 @@ function Registration() {
         description="Password should be max then 8 character:"
         className="my-2"
       />
-      <p>Already have an account?  <button className="text-blue-500" >Login</button></p>
+      <p>
+        Already have an account?{" "}
+        <button className="text-blue-500" onClick={toggleState}>
+          Login
+        </button>
+      </p>
+      
     </div>
   );
-}
-
+  
+};
+Registration.propTypes = {
+  toggleState: PropTypes.func.isRequired, // Ensures toggleState is a function and required
+};
 export default Registration;

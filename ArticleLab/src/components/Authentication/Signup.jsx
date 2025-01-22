@@ -1,29 +1,30 @@
 import {
   Modal,
   ModalContent,
-  ModalHeader,
-  ModalBody,
+
   ModalFooter,
   Button,
   useDisclosure,
 } from "@nextui-org/react";
 import Login from "./Login";
-import { Switch } from "@nextui-org/react";
+
 import { useState } from "react";
 import Registration from "./Registration";
 const SignUp = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleChange = () => {
-    setIsChecked(!isChecked);
+  const toggleState = () => {
+    setIsChecked((prevState) => !prevState); // Toggle state between true and false
+
   };
+
   return (
     <>
       <Button
         onPress={onOpen}
         size="sm"
-        className="bg-yellow-400 font-bold tracking-wide rounded-xl"
+        className="bg-yellow-400 font-bold tracking-wide rounded-xl hidden md:block"
       >
         SignUp
       </Button>
@@ -31,20 +32,13 @@ const SignUp = () => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                <div className=" flex justify-center">
-                  <Switch
-                    checked={isChecked}
-                    onChange={(e) => handleChange(e.target.checked)}
-                    size="lg"
-                    className=""
-                  />
-                </div>
-              </ModalHeader>
-              <ModalBody></ModalBody>
-
               <div className="mt-3 mx-auto w-4/5">
-                {isChecked ? <Login /> : <Registration />}
+                  {/* Conditionally render Register or Login component based on isChecked */}
+      {isChecked ? (
+        <Login toggleState={toggleState} />
+      ) : (
+        <Registration toggleState={toggleState} />
+      )}
               </div>
               <ModalFooter className="p-2">
                 <Button
@@ -55,10 +49,11 @@ const SignUp = () => {
                 >
                   Close
                 </Button>
-
+                
                 <Button color="primary" size="md" onPress={onClose}>
                   {isChecked ? <p>Submit</p> : <p>Register</p>}
                 </Button>
+
               </ModalFooter>
             </>
           )}

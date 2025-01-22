@@ -94,7 +94,7 @@ const HomePage = () => {
 
             <Button
               radius="lg"
-              className=" bg-yellow-400 font-bold ml-4 "
+              className=" bg-yellow-400 font-bold ml-4 text-xs md:text-sm  "
               onClick={() => {
                 handleTrackOrderClick();
                 fetchUsers();
