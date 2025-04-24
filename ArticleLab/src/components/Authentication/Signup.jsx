@@ -1,7 +1,6 @@
 import {
   Modal,
   ModalContent,
-
   ModalFooter,
   Button,
   useDisclosure,
@@ -15,8 +14,7 @@ const SignUp = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const toggleState = () => {
-    setIsChecked((prevState) => !prevState); // Toggle state between true and false
-
+    setIsChecked((prevState) => !prevState);
   };
 
   return (
@@ -33,12 +31,11 @@ const SignUp = () => {
           {(onClose) => (
             <>
               <div className="mt-3 mx-auto w-4/5">
-                  {/* Conditionally render Register or Login component based on isChecked */}
-      {isChecked ? (
-        <Login toggleState={toggleState} />
-      ) : (
-        <Registration toggleState={toggleState} />
-      )}
+                {isChecked ? (
+                  <Login toggleState={toggleState} />
+                ) : (
+                  <Registration toggleState={toggleState} />
+                )}
               </div>
               <ModalFooter className="p-2">
                 <Button
@@ -49,11 +46,10 @@ const SignUp = () => {
                 >
                   Close
                 </Button>
-                
+
                 <Button color="primary" size="md" onPress={onClose}>
                   {isChecked ? <p>Submit</p> : <p>Register</p>}
                 </Button>
-
               </ModalFooter>
             </>
           )}
