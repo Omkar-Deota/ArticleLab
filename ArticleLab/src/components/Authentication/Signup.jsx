@@ -22,7 +22,7 @@ const SignUp = () => {
       <Button
         onPress={onOpen}
         size="sm"
-        className="bg-yellow-400 font-bold tracking-wide rounded-xl hidden md:block"
+        className="bg-orange-400 font-bold tracking-wide rounded-xl hidden md:block"
       >
         SignUp
       </Button>

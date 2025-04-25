@@ -25,14 +25,14 @@ export default function App() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      className="sticky top-0 z-50 backdrop-blur-md border-slate-700/10"
+      className="sticky top-0 z-50 backdrop-blur-md border-slate-700/10 "
     >
-      <NavbarContent className="flex">
+      <NavbarContent className="flex ">
         <NavbarBrand className="flex">
           <img
             src={img1}
             alt="logo"
-            className="md:h-12 h-10 w-24 md:w-28 my-1 "
+            className="md:h-12 h-10 w-24 md:w-28 my-1  "
           />
           <p className="bg-gradient-to-r from-cyan-800 ml-4 to-orange-600 text-transparent bg-clip-text md:text-2xl text-xl font-serif font-extrabold tracking-wider">
             ArticleLab
