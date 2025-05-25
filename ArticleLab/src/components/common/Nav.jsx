@@ -1,13 +1,11 @@
 import { useState } from "react";
 import {
   Navbar,
-  NavbarBrand,
-  NavbarContent,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import SignUp from "../Authentication/SignUp";
 
 export default function App() {
@@ -18,7 +16,7 @@ export default function App() {
   // Define paths corresponding to menu items
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
+    { name: "Services", path: "/sample" },
     { name: "About", path: "/about" },
     { name: "Contact us", path: "/contact" },
     { name: "SignUp", path: "/signup" },
@@ -31,10 +29,10 @@ export default function App() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      className="sticky top-0 z-50 backdrop-blur-md border-slate-700/10"
+      className="sticky top-0 z-50 backdrop-blur-md border-slate-700/10 w-full"
     >
-      <NavbarContent className="flex">
-        <NavbarBrand className="flex">
+      <div className="flex justify-between w-full items-center">
+        <div className="flex items-center">
           <img
             src={img1}
             alt="logo"
@@ -43,14 +41,16 @@ export default function App() {
           <p className="bg-gradient-to-r from-cyan-800 ml-4 to-orange-600 text-transparent bg-clip-text md:text-2xl text-xl font-serif font-extrabold tracking-wider">
             ArticleLab
           </p>
-        </NavbarBrand>
+        </div>
 
-        <SignUp className="" setOpen={handleChange} />
+        <div className="flex space-x-5 items-center absolute right-10">
+          <SignUp className="" setOpen={handleChange} />
 
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        />
-      </NavbarContent>
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          />
+        </div>
+      </div>
 
       <NavbarMenu className="w-1/5 left-auto right-0 items-center">
         {menuItems.map((item, index) => (

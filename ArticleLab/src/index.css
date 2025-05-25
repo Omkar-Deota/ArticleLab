@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 :root{
-
+    background-color: rgba(128, 128, 128, 0.158);
     padding: 4px;
 }
