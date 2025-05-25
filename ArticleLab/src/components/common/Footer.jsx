@@ -1,9 +1,7 @@
 const Footer = () => {
   return (
-    <div className="text-2xl text-orange-600 font-extrabold text-center bg-orange-300 w-full h-auto">
-
-      <span>Follow us</span>
-      
+    <div className="flex text-xl text-orange-600 bg-orange-300 w-full font-bold p-3 rounded-lg justify-end h-16 items-center ">
+      <span>Developed by &copy; Article Laboratories</span>
     </div>
   );
 };

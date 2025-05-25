@@ -25,7 +25,7 @@ const HomePage = () => {
   const [inputValue, setInputValue] = useState("");
 
   const trackOrderId = (userId) => {
-       alert(`User name is:${userId}`);
+    alert(`User name is:${userId}`);
   };
 
   return (
@@ -42,29 +42,25 @@ const HomePage = () => {
             Track your consignment
           </h2>
 
-        
-            <Autocomplete
-              className="max-w-xs "
-              placeholder="Track an order"
-              onInputChange={(value) => setInputValue(value)}
-              color="warning"
-          
-            >
-              {inputValue.length &&
-                users.map((user) => (
-                  <AutocompleteItem
-                    key={user.id}
-                    onClick={() => trackOrderId(user.id)}
-                  >
-                    {user.name}
-                  </AutocompleteItem>
-                ))}
-            </Autocomplete>
-          </div>
+          <Autocomplete
+            className="max-w-xs "
+            placeholder="Track an order"
+            onInputChange={(value) => setInputValue(value)}
+            color="warning"
+          >
+            {inputValue.length &&
+              users.map((user) => (
+                <AutocompleteItem
+                  key={user.id}
+                  onClick={() => trackOrderId(user.id)}
+                >
+                  {user.name}
+                </AutocompleteItem>
+              ))}
+          </Autocomplete>
         </div>
-        <AboutUs/>
-
-      
+      </div>
+      <AboutUs />
 
       <Footer />
     </>

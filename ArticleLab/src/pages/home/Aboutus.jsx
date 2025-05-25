@@ -15,14 +15,16 @@ const AboutUs = () => {
           </p>
         </div>
 
-        <div className="flex max-md:flex-col justify-center items-center gap-3">
+        <div className="flex max-md:flex-col justify-evenly items-center">
           {FEATURE_DATA.map((item) => (
             <div
               key={item.id}
-              className="  mb-5 shadow-2xl hover:shadow-slate-400  rounded-2xl bg-white "
+              className=" mb-5 shadow-2xl hover:shadow-slate-400  rounded-2xl bg-gray-300 p-3 transform transition-transform duration-300 hover:scale-110"
             >
-              <img src={item.image} alt="" className="rounded-2xl h-40 w-60" />
-              <p className="text-black text-center">{item.title}</p>
+              <img src={item.image} alt="" className="rounded-2xl h-60 w-80" />
+              <p className=" text-center tracking-wide text-gray-600 font-semibold">
+                {item.title}
+              </p>
             </div>
           ))}
         </div>

@@ -1,11 +1,7 @@
 import HomePage from "./pages/home/HomePage";
 
 const App = () => {
-  return (
-    <>
-      <HomePage />
-    </>
-  );
+  return <HomePage />;
 };
 
 export default App;
