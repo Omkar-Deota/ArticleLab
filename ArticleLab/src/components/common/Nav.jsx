@@ -13,10 +13,6 @@ import SignUp from "../Authentication/SignUp";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
-
-  // eslint-disable-next-line no-unused-vars
-  const [showModal, setShowModal] = useState(false);
-
   const img1 = "/src/assets/picture/logo1.png";
   const menuItems = ["Home", "Services", "About", "Contact us", "SignUp"];
   const handleChange = () => {
