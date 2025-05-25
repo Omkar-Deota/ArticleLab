@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 // eslint-disable-next-line no-undef
 const { nextui } = require("@nextui-org/react");
 
@@ -10,6 +11,9 @@ export default {
   ],
   theme: {
     extend: {},
+  },
+  color: {
+    lightorange: "#ff7b00",
   },
 
   darkMode: "class",
